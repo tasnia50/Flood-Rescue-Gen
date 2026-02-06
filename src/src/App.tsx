@@ -1,0 +1,27 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Index from "./pages/Index";
+import SafetyAdvisor from "./pages/SafetyAdvisor";
+import SafeZones from "./pages/SafeZones";
+import RescueForm from "./pages/RescueForm";
+import AdminView from "./pages/AdminView";
+import About from "./pages/About";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/advisor" element={<SafetyAdvisor />} />
+          <Route path="/safe-zones" element={<SafeZones />} />
+          <Route path="/rescue" element={<RescueForm />} />
+          <Route path="/admin" element={<AdminView />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+}
+
+export default App;
